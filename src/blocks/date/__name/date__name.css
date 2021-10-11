@@ -1,0 +1,10 @@
+.date__name {
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .02em;
+  color: #282846;
+  align-self: flex-start;
+}

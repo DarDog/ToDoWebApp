@@ -1,0 +1,7 @@
+.task__list {
+  width: 100%;
+}
+
+.task__list:first-of-type {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,8 @@
+.container__item_flex_column {
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.container__item_flex_column:last-of-type {
+  margin-bottom: 0;
+}

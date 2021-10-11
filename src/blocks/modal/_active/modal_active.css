@@ -1,0 +1,5 @@
+.modal_active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .5s, visibility .5s;
+}

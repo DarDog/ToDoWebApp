@@ -1,0 +1,7 @@
+.container__function-button {
+  background: url("../../../images/function.svg") no-repeat center;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 7px;
+}

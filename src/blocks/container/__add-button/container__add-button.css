@@ -1,0 +1,21 @@
+.container__add-button {
+  border: none;
+  color: #29a19c;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .025em;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.container__add-button::before {
+  content: url("../../../images/plus-square.svg");
+  height: 18px;
+  margin-right: 10px;
+}

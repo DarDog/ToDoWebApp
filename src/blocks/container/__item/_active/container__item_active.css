@@ -1,0 +1,9 @@
+.container__item_active {
+  width: 100%;
+}
+
+.container__item_active::after {
+  content: url("../../../../images/Active.svg");
+  margin-left: auto;
+  height: 18px;
+}

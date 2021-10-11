@@ -1,0 +1,6 @@
+.header__theme-button {
+  border: none;
+  background: url("../../../images/moon.svg") no-repeat center;
+  width: 24px;
+  height: 24px;
+}

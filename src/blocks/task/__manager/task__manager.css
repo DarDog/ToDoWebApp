@@ -1,0 +1,5 @@
+.task__manager {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+}

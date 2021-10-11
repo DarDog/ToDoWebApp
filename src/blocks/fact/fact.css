@@ -1,0 +1,6 @@
+.fact {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  max-width: 432px;
+}

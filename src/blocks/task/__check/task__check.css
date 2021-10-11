@@ -1,0 +1,12 @@
+.task__check {
+  background: url("../../../images/checkbox.svg") no-repeat center;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+  margin-right: 10px;
+}

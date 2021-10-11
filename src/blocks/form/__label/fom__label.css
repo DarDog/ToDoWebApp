@@ -1,0 +1,10 @@
+.form__label {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: .02em;
+  color: #282846;
+  margin: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+}

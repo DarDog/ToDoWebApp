@@ -1,0 +1,10 @@
+.logo__name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #29a19c;
+  letter-spacing: .03em;
+  text-align: left;
+}

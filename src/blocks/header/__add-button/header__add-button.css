@@ -1,0 +1,9 @@
+.header__add-button {
+  background-color: #29a19c;
+}
+
+.header__add-button::before {
+  content: url("../../../images/plus.svg");
+  height: 20px;
+  margin-right: 10px;
+}

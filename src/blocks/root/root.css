@@ -1,0 +1,9 @@
+.root {
+  background-color: #fafafa;
+  max-width: 1440px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(1, 230px auto);
+  grid-template-rows: repeat(1, 100px auto);
+  width: 100%;
+}

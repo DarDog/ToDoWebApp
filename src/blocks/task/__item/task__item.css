@@ -1,0 +1,22 @@
+.task__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 10px;
+  border: 1px solid rgba(40, 40, 70, .1);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.task__item:last-of-type {
+  margin: 0;
+}
+
+.task__item:hover .task__check{
+  display: block;
+}
+
+.task__item:hover .task__manager{
+  display: flex;
+}

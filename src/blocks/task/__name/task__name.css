@@ -1,0 +1,10 @@
+.task__name {
+  margin: 0 auto 0 0;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: .02em;
+  color: #282846;
+  min-height: 22px;
+}

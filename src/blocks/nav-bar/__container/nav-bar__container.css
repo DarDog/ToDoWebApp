@@ -1,0 +1,9 @@
+.nav-bar__container {
+  width: 100%;
+  margin: 0 0 60px 0;
+  gap: 20px;
+}
+
+.nav-bar__container:last-of-type {
+  margin-bottom: 0;
+}

@@ -1,0 +1,11 @@
+.user__menu {
+  width: 24px;
+  height: 24px;
+  background: #fafafa url("../../../images/header__user-menu.svg") no-repeat center 30%;
+  background-attachment: inherit;
+  box-shadow: 0 10px 25px rgba(29, 52, 54, .08);
+  border: none;
+  border-radius: 5px;
+  object-position: center;
+  object-fit: cover;
+}
