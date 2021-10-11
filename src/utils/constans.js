@@ -8,24 +8,28 @@ export const prependCategory = [
     title: 'Дом',
     className: 'Дом',
     image: home,
-    _id: 1
+    isActive: true,
+    _id: 0
   },
   {
     title: 'Семья',
     className: 'Семья',
     image: family,
-    _id: 2
+    isActive: false,
+    _id: 1
   },
   {
     title: 'Работа',
     className: 'Работа',
     image: job,
-    _id: 3
+    isActive: false,
+    _id: 2
   },
   {
     title: 'Спорт',
     className: 'Спорт',
     image: sport,
-    _id: 4
+    isActive: false,
+    _id: 3
   },
 ];

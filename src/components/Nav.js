@@ -6,6 +6,24 @@ import {prependCategory} from "../utils/constans";
 import Category from "./Category";
 
 function Nav() {
+  const [categories, setCategories] = React.useState([]);
+
+  React.useEffect(() => {
+    setCategories(prependCategory)
+  }, [])
+
+  const handleToggleActiveCategory = (id) => {
+    categories.map(category =>
+      category.isActive = false
+    )
+
+    setCategories([
+      ...categories.map(category =>
+          category._id === id ? {...category, isActive: !category.isActive} : {...category}
+      )
+    ]);
+  };
+
   return (
       <nav className="nav-bar root__nav-bar">
         <a href="#" className="logo nav-bar__logo">
@@ -15,12 +33,14 @@ function Nav() {
         <article className="nav-bar__container container">
           <h2 className="container__title container__title_font-size-m">Категории</h2>
           <ul className="container__list list category__list">
-            {prependCategory.map(category => {
+            {categories.map(category => {
               return <Category
+                  category={category}
                   key={category._id}
                   title={category.title}
                   nameOfClass={category.className}
                   image={category.image}
+                  toggleActive={handleToggleActiveCategory}
               />
             })}
           </ul>
