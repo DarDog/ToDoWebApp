@@ -1,11 +1,11 @@
 import logo from '../images/logo.svg'
 import barChart from '../images/bar-chart-2.svg'
 import trendingUp from '../images/trending-up.svg'
-import avatar from '../images/avatar.jpg'
 import clock from '../images/clock.svg'
 import calendar from '../images/calendar.svg'
 import lineChart from '../images/Line chart.svg'
 import React from "react";
+import Header from "./Header";
 
 function App() {
   return (
@@ -35,16 +35,7 @@ function App() {
             </ul>
           </article>
         </nav>
-        <header className="header root__header">
-          <button className="header__add-button button">Новая задача</button>
-          <button className="header__theme-button"/>
-          <div className="user">
-            <p className="user__greetings">Хорошего дня, <span
-                className="user__greetings user__greetings_span">username</span></p>
-            <img src={avatar} alt="Ваш аватар" className="user__avatar"/>
-            <button className="user__menu"/>
-          </div>
-        </header>
+        <Header />
         <main className="main root__main">
           <section className="section main__section left-bar">
             <article className="container main__container">
@@ -210,7 +201,7 @@ function App() {
         <template class="task-template">
           <li className="task__item">
             <button className="task__check" type="button"/>
-            <p className="task__name"></p>
+            <p className="task__name"> </p>
             <div className="task__manager">
               <button className="task__editor" type="button"/>
               <button className="task__deleter" type="button"/>
