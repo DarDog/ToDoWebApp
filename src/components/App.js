@@ -11,12 +11,6 @@ function App() {
         <Header />
         <Main />
         <AddToDoPopup />
-        <template class="category-template">
-          <li className="container__item cursor-pointer">
-            <img src="" alt="" className="container__item-image"/>
-            <p className="container__item-name container__item-name_font-size_l"/>
-          </li>
-        </template>
         <template class="tasks-container-template">
           <article className="container main__container todo-list">
             <div className="container__title-container">

@@ -2,6 +2,8 @@ import React from 'react'
 import logo from "../images/logo.svg";
 import barChart from "../images/bar-chart-2.svg";
 import trendingUp from "../images/trending-up.svg";
+import {prependCategory} from "../utils/constans";
+import Category from "./Category";
 
 function Nav() {
   return (
@@ -13,6 +15,14 @@ function Nav() {
         <article className="nav-bar__container container">
           <h2 className="container__title container__title_font-size-m">Категории</h2>
           <ul className="container__list list category__list">
+            {prependCategory.map(category => {
+              return <Category
+                  key={category._id}
+                  title={category.title}
+                  nameOfClass={category.className}
+                  image={category.image}
+              />
+            })}
           </ul>
           <button className="container__add-button create-category">Добавить</button>
         </article>
