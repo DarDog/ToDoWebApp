@@ -1,22 +1,23 @@
 import React from "react";
 import Header from "./Header";
-import Nav from "./Nav";
+import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import AddToDoPopup from "./AddToDoPopup";
+import {prependCategory} from "../utils/constans";
 
 function App() {
+  const [categories, setCategories] = React.useState([]);
+
+  React.useEffect(() => {
+    setCategories(prependCategory)
+  }, []);
+
   return (
       <>
-        <Nav />
+        <Nav categories={categories} />
         <Header />
         <Main />
         <AddToDoPopup />
-        <template class="category-template">
-          <li className="container__item cursor-pointer">
-            <img src="" alt="" className="container__item-image"/>
-            <p className="container__item-name container__item-name_font-size_l"/>
-          </li>
-        </template>
         <template class="tasks-container-template">
           <article className="container main__container todo-list">
             <div className="container__title-container">

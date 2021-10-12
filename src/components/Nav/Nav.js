@@ -1,21 +1,18 @@
 import React from 'react'
-import logo from "../images/logo.svg";
-import barChart from "../images/bar-chart-2.svg";
-import trendingUp from "../images/trending-up.svg";
+import logo from "../../images/logo.svg";
+import barChart from "../../images/bar-chart-2.svg";
+import trendingUp from "../../images/trending-up.svg";
+import Categories from "./Categories";
+import {NavLink} from "react-router-dom";
 
-function Nav() {
+function Nav(props) {
   return (
       <nav className="nav-bar root__nav-bar">
-        <a href="#" className="logo nav-bar__logo">
+        <NavLink exact to={'/'} className={'logo nav-bar__logo'}>
           <img src={logo} alt="Логотип" className="logo__image"/>
           <h1 className="logo__name">Tasks Book</h1>
-        </a>
-        <article className="nav-bar__container container">
-          <h2 className="container__title container__title_font-size-m">Категории</h2>
-          <ul className="container__list list category__list">
-          </ul>
-          <button className="container__add-button create-category">Добавить</button>
-        </article>
+        </NavLink>
+        <Categories categories={props.categories}/>
         <article className="nav-bar__container container">
           <h2 className="container__title container__title_font-size-m">Данные</h2>
           <ul className="container__list list">
