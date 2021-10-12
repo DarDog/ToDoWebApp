@@ -14,28 +14,24 @@ function App() {
     setTasks(prependTasks);
   }, []);
 
+  const handleToggleTaskCompleteStatus = (taskId) => {
+    setTasks([
+        ...tasks.map(task =>
+            task._id === taskId ? {...task, isComplete: !task.isComplete} : {...task}
+        )
+    ])
+  }
+
   return (
       <>
         <Nav categories={categories} />
         <Header />
-        <Main tasks={tasks} categories={categories} />
+        <Main
+            tasks={tasks}
+            categories={categories}
+            onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
+        />
         <AddToDoPopup />
-        <template class="tasks-container-template">
-          <article className="container main__container todo-list">
-            <div className="container__title-container">
-              <h2 className="container__title container__title_font-size-s">Активные задачи</h2>
-              <button className="container__function-button"/>
-            </div>
-            <ul className="list task__list task__list_uncompleted">
-            </ul>
-            <div className="container__title-container">
-              <h2 className="container__title container__title_font-size-s">Завершенные задачи</h2>
-              <button className="container__function-button"/>
-            </div>
-            <ul className="list task__list task__list_completed">
-            </ul>
-          </article>
-        </template>
       </>
   );
 }
