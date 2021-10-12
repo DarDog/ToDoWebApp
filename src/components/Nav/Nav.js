@@ -12,7 +12,10 @@ function Nav(props) {
           <img src={logo} alt="Логотип" className="logo__image"/>
           <h1 className="logo__name">Tasks Book</h1>
         </NavLink>
-        <Categories categories={props.categories}/>
+        <Categories
+            onOpenAddCategoryPopup={props.onOpenAddCategoryPopup}
+            categories={props.categories}
+        />
         <article className="nav-bar__container container">
           <h2 className="container__title container__title_font-size-m">Данные</h2>
           <ul className="container__list list">

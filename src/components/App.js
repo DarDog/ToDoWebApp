@@ -4,11 +4,13 @@ import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import AddTaskPopup from "./Popups/AddTaskPopup";
+import AddCategoryPopup from "./Popups/AddCategoryPopup";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
   const [tasks, setTasks] = React.useState([]);
   const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
+  const [isAddCategoryOpen, setIsCategoryTaskOpen] = React.useState(false);
 
   React.useEffect(() => {
     setCategories(prependCategory);
@@ -29,6 +31,7 @@ function App() {
 
   const closeAllPopups = () => {
     setIsAddTaskOpen(false)
+    setIsCategoryTaskOpen(false)
   }
 
   React.useEffect(() => {
@@ -43,19 +46,29 @@ function App() {
     return () => document.removeEventListener('keydown', closeByEscape)
   })
 
-  const openAddTaskOpen = () => {
-    setIsAddTaskOpen(true)
+  const openAddTaskPopup = () => {
+    setIsAddTaskOpen(true);
+  }
+
+  const openAddCategoryPopup = () => {
+    setIsCategoryTaskOpen(true);
   }
 
   const handleTaskAdd = (newTask) => {
-    console.log(newTask)
     setTasks([newTask, ...tasks])
+  }
+
+  const handleCategoryAdd = (newCategory) => {
+    setCategories([...categories, newCategory])
   }
 
   return (
       <>
-        <Nav categories={categories} />
-        <Header onOpenAddTaskPopup={openAddTaskOpen} />
+        <Nav
+            categories={categories}
+            onOpenAddCategoryPopup={openAddCategoryPopup}
+        />
+        <Header onOpenAddTaskPopup={openAddTaskPopup} />
         <Main
             tasks={tasks}
             categories={categories}
@@ -68,6 +81,13 @@ function App() {
             categories={categories}
             onTaskAdd={handleTaskAdd}
             tasksLength={tasks.length}
+        />
+        <AddCategoryPopup
+            isOpen={isAddCategoryOpen}
+            onClose={closeAllPopups}
+            onCategoryAdd={handleCategoryAdd}
+            categoryLength={categories.length}
+            categories={categories}
         />
       </>
   );
