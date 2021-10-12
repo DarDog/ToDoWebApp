@@ -3,7 +3,6 @@ import { prependCategory, prependTasks } from "../utils/constans";
 import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
-import Popup from "./Popups/Popup";
 import AddTaskPopup from "./Popups/AddTaskPopup";
 
 function App() {

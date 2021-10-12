@@ -6,28 +6,28 @@ import sport from '../images/zap.svg'
 export const prependCategory = [
   {
     title: 'Дом',
-    className: 'Дом',
+    categoryCode: 'Дом',
     image: home,
     isActive: true,
     _id: 0
   },
   {
     title: 'Семья',
-    className: 'Семья',
+    categoryCode: 'Семья',
     image: family,
     isActive: false,
     _id: 1
   },
   {
     title: 'Работа',
-    className: 'Работа',
+    categoryCode: 'Работа',
     image: job,
     isActive: false,
     _id: 2
   },
   {
     title: 'Спорт',
-    className: 'Спорт',
+    categoryCode: 'Спорт',
     image: sport,
     isActive: false,
     _id: 3

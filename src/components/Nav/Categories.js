@@ -8,10 +8,9 @@ function Categories(props) {
         <ul className="container__list list category__list">
           {props.categories.map(category => {
             return <Category
-                category={category}
                 key={category._id}
                 title={category.title}
-                nameOfClass={category.className}
+                categoryCode={category.categoryCode}
                 image={category.image}
             />
           })}
