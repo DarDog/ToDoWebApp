@@ -102,6 +102,9 @@ function AddTaskPopup(props) {
           onClose={props.onClose}
           isValid={isFormValid}
           onSubmit={handleSubmit}
+          popupName={'Добавить новую задачу'}
+          formName={'task-creator'}
+          isAddTask={true}
       >
         <label className="form__label" htmlFor="input-task-name">Что нужно сделать?</label>
         <input className={`form__input ${isNameValid ? 'form__input_valid' : '' }`}

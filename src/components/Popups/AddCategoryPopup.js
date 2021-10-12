@@ -12,6 +12,9 @@ function AddCategoryPopup(props) {
       <Popup
           isOpen={props.isOpen}
           onClose={props.onClose}
+          popupName={'Добавить новую категорию'}
+          formName={'category-creator'}
+          isAddTask={false}
       >
         <label className="form__label" htmlFor="input-task-name">Что нужно сделать?</label>
         <input className={`form__input`}
