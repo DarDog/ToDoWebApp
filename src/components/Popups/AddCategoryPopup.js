@@ -2,6 +2,12 @@ import React from 'react';
 import Popup from "./Popup";
 
 function AddCategoryPopup(props) {
+  const [name, setName] = React.useState('');
+
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+
   return (
       <Popup
           isOpen={props.isOpen}
@@ -15,6 +21,8 @@ function AddCategoryPopup(props) {
                required
                maxLength="100"
                minLength="2"
+               onChange={handleNameChange}
+               value={name || ''}
         />
       </Popup>
   );
