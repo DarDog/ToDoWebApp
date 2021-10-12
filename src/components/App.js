@@ -4,6 +4,7 @@ import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import Popup from "./Popups/Popup";
+import AddTaskPopup from "./Popups/AddTaskPopup";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -45,7 +46,7 @@ function App() {
             onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
             onTaskDelete={handleTaskDelete}
         />
-        <Popup isOpen={isAddTaskOpen} onClose={closeAllPopups}/>
+        <AddTaskPopup isOpen={isAddTaskOpen} onClose={closeAllPopups} />
       </>
   );
 }

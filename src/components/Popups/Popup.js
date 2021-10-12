@@ -1,5 +1,4 @@
 import React from 'react';
-import AddTaskForm from "./AddTaskForm";
 
 function Popup(props) {
   return (
@@ -12,7 +11,7 @@ function Popup(props) {
             </select>
             <label htmlFor="container-select"/>
           </div>
-          <AddTaskForm />
+          {props.children}
         </div>
       </article>
   )
