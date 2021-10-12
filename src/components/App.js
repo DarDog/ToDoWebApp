@@ -57,7 +57,11 @@ function App() {
             onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
             onTaskDelete={handleTaskDelete}
         />
-        <AddTaskPopup isOpen={isAddTaskOpen} onClose={closeAllPopups} />
+        <AddTaskPopup
+            isOpen={isAddTaskOpen}
+            onClose={closeAllPopups}
+            categories={categories}
+        />
       </>
   );
 }

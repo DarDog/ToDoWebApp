@@ -39,36 +39,48 @@ export const prependTasks = [
     title: 'test0',
     category: 'Дом',
     isComplete: false,
+    date: 0,
+    priority: 'p1',
     _id: 0
   },
   {
     title: 'test1',
     category: 'Дом',
     isComplete: true,
+    date: 0,
+    priority: 'p1',
     _id: 1
   },
   {
     title: 'test2',
     category: 'Дом',
     isComplete: false,
+    date: 0,
+    priority: 'p1',
     _id: 2
   },
   {
     title: 'test3',
     category: 'Спорт',
     isComplete: false,
+    date: 0,
+    priority: 'p1',
     _id: 3
   },
   {
     title: 'test4',
     category: 'Работа',
     isComplete: false,
+    date: 0,
+    priority: 'p1',
     _id: 4
   },
   {
     title: 'test5',
     category: 'Семья',
     isComplete: false,
+    date: 0,
+    priority: 'p1',
     _id: 5
   },
 ]
