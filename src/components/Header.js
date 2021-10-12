@@ -1,10 +1,10 @@
 import React from 'react'
 import avatar from "../images/avatar.jpg";
 
-function Header() {
+function Header(props) {
   return (
       <header className="header root__header">
-        <button className="header__add-button button">Новая задача</button>
+        <button onClick={props.onOpenAddTaskPopup} className="header__add-button button">Новая задача</button>
         <button className="header__theme-button"/>
         <div className="user">
           <p className="user__greetings">Хорошего дня, <span

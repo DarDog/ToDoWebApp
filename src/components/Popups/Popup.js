@@ -1,9 +1,9 @@
 import React from 'react';
 import AddTaskForm from "./AddTaskForm";
 
-function Popup() {
+function Popup(props) {
   return (
-      <article className="modal">
+      <article className={`modal ${props.isOpen && 'modal_active'}`}>
         <div className="container modal__container">
           <div className="modal__title-container">
             <h2 className="container__title container__title_font-size-l">Добавить новую задачу</h2>

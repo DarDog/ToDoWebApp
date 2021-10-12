@@ -8,6 +8,7 @@ import Popup from "./Popups/Popup";
 function App() {
   const [categories, setCategories] = React.useState([]);
   const [tasks, setTasks] = React.useState([]);
+  const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
 
   React.useEffect(() => {
     setCategories(prependCategory);
@@ -26,17 +27,25 @@ function App() {
     setTasks(tasks => tasks.filter((task) => task._id === taskId ? task.remove : task))
   }
 
+  const closeAllPopups = () => {
+    setIsAddTaskOpen(false)
+  }
+
+  const openAddTaskOpen = () => {
+    setIsAddTaskOpen(true)
+  }
+
   return (
       <>
         <Nav categories={categories} />
-        <Header />
+        <Header onOpenAddTaskPopup={openAddTaskOpen} />
         <Main
             tasks={tasks}
             categories={categories}
             onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
             onTaskDelete={handleTaskDelete}
         />
-        <Popup />
+        <Popup isOpen={isAddTaskOpen} onClose={closeAllPopups}/>
       </>
   );
 }
