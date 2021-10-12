@@ -22,6 +22,10 @@ function App() {
     ])
   }
 
+  const handleTaskDelete = (taskId) => {
+    setTasks(tasks => tasks.filter((task) => task._id === taskId ? task.remove : task))
+  }
+
   return (
       <>
         <Nav categories={categories} />
@@ -30,6 +34,7 @@ function App() {
             tasks={tasks}
             categories={categories}
             onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
+            onTaskDelete={handleTaskDelete}
         />
         <AddToDoPopup />
       </>

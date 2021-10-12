@@ -1,9 +1,8 @@
 import React from 'react';
-import { Switch } from 'react-router-dom'
 import clock from "../../images/clock.svg";
 import calendar from "../../images/calendar.svg";
 import lineChart from "../../images/Line chart.svg";
-import TaskList from './TaskList'
+import TaskList from './TaskList';
 
 function Main(props) {
   return (
@@ -38,16 +37,15 @@ function Main(props) {
               </li>
             </ul>
           </article>
-          <Switch>
             {props.categories.map(category => {
               return <TaskList
                   key={category._id}
                   category={category.className}
                   tasks={props.tasks}
                   onToggleCompleteStatus={props.onToggleTaskCompleteStatus}
+                  onTaskDelete={props.onTaskDelete}
               />
             })}
-          </Switch>
         </section>
         <section className="section main__section">
           <article className="container main__container">

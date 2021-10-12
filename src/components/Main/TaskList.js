@@ -13,7 +13,11 @@ function TaskList(props) {
           <ul className="list task__list task__list_uncompleted">
             {props.tasks.map(task => {
               if (task.category === props.category && task.isComplete === false) {
-                return <Task key={task._id} task={task} onToggleCompleteStatus={props.onToggleCompleteStatus} />
+                return <Task key={task._id}
+                             task={task}
+                             onToggleCompleteStatus={props.onToggleCompleteStatus}
+                             onTaskDelete={props.onTaskDelete}
+                />
               }
             })}
           </ul>
@@ -24,7 +28,12 @@ function TaskList(props) {
           <ul className="list task__list task__list_completed">
             {props.tasks.map(task => {
               if (task.category === props.category && task.isComplete === true) {
-                return <Task key={task._id} task={task} onToggleCompleteStatus={props.onToggleCompleteStatus} />
+                return <Task
+                    key={task._id}
+                    task={task}
+                    onToggleCompleteStatus={props.onToggleCompleteStatus}
+                    onTaskDelete={props.onTaskDelete}
+                />
               }
             })}
           </ul>
