@@ -33,3 +33,42 @@ export const prependCategory = [
     _id: 3
   },
 ];
+
+export const prependTasks = [
+  {
+    title: 'test0',
+    category: 'Дом',
+    isComplete: false,
+    _id: 0
+  },
+  {
+    title: 'test1',
+    category: 'Дом',
+    isComplete: true,
+    _id: 1
+  },
+  {
+    title: 'test2',
+    category: 'Дом',
+    isComplete: false,
+    _id: 2
+  },
+  {
+    title: 'test3',
+    category: 'Спорт',
+    isComplete: false,
+    _id: 3
+  },
+  {
+    title: 'test4',
+    category: 'Работа',
+    isComplete: false,
+    _id: 4
+  },
+  {
+    title: 'test5',
+    category: 'Семья',
+    isComplete: false,
+    _id: 5
+  },
+]

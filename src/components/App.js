@@ -1,49 +1,42 @@
 import React from "react";
+import { prependCategory, prependTasks } from "../utils/constans";
 import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import AddToDoPopup from "./AddToDoPopup";
-import {prependCategory} from "../utils/constans";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
+  const [tasks, setTasks] = React.useState([]);
 
   React.useEffect(() => {
-    setCategories(prependCategory)
+    setCategories(prependCategory);
+    setTasks(prependTasks);
   }, []);
+
+  const handleToggleTaskCompleteStatus = (taskId) => {
+    setTasks([
+        ...tasks.map(task =>
+            task._id === taskId ? {...task, isComplete: !task.isComplete} : {...task}
+        )
+    ])
+  }
+
+  const handleTaskDelete = (taskId) => {
+    setTasks(tasks => tasks.filter((task) => task._id === taskId ? task.remove : task))
+  }
 
   return (
       <>
         <Nav categories={categories} />
         <Header />
-        <Main />
+        <Main
+            tasks={tasks}
+            categories={categories}
+            onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
+            onTaskDelete={handleTaskDelete}
+        />
         <AddToDoPopup />
-        <template class="tasks-container-template">
-          <article className="container main__container todo-list">
-            <div className="container__title-container">
-              <h2 className="container__title container__title_font-size-s">Активные задачи</h2>
-              <button className="container__function-button"/>
-            </div>
-            <ul className="list task__list task__list_uncompleted">
-            </ul>
-            <div className="container__title-container">
-              <h2 className="container__title container__title_font-size-s">Завершенные задачи</h2>
-              <button className="container__function-button"/>
-            </div>
-            <ul className="list task__list task__list_completed">
-            </ul>
-          </article>
-        </template>
-        <template class="task-template">
-          <li className="task__item">
-            <button className="task__check" type="button"/>
-            <p className="task__name"> </p>
-            <div className="task__manager">
-              <button className="task__editor" type="button"/>
-              <button className="task__deleter" type="button"/>
-            </div>
-          </li>
-        </template>
       </>
   );
 }
