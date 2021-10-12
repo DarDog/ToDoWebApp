@@ -29,13 +29,13 @@ function Popup(props) {
             </select>
             <label htmlFor="container-select"/>
           </div>
-          <form className="form modal__form" name="task-creator" onSubmit={props.onSubmit}>
+          <form className="form modal__form" name="task-creator" onSubmit={props.onSubmit} noValidate>
             {props.children}
             <div className="form__controller">
               <button onClick={props.onClose} className="button form__button_type_reset" type="reset">Отменить</button>
               <div className="form__controller form__controller_arrange_closer">
-                <button className="button form__button_type_save" type="button">Сохранить как шаблон</button>
-                <button className="button form__button_type_submit" type="submit">Добавить</button>
+                <button className={`button form__button_type_save ${!props.isValid ? 'form__button_disable' : ''}`} type="button">Сохранить как шаблон</button>
+                <button className={`button form__button_type_submit ${!props.isValid ? 'form__button_disable' : ''}`} type="submit">Добавить</button>
               </div>
             </div>
           </form>

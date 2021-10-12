@@ -48,6 +48,7 @@ function App() {
   }
 
   const handleTaskAdd = (newTask) => {
+    console.log(newTask)
     setTasks([newTask, ...tasks])
   }
 
