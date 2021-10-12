@@ -1,22 +1,24 @@
 import React from "react";
+import { prependCategory, prependTasks } from "../utils/constans";
 import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import AddToDoPopup from "./AddToDoPopup";
-import {prependCategory} from "../utils/constans";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
+  const [tasks, setTasks] = React.useState([]);
 
   React.useEffect(() => {
-    setCategories(prependCategory)
+    setCategories(prependCategory);
+    setTasks(prependTasks);
   }, []);
 
   return (
       <>
         <Nav categories={categories} />
         <Header />
-        <Main />
+        <Main tasks={tasks} categories={categories} />
         <AddToDoPopup />
         <template class="tasks-container-template">
           <article className="container main__container todo-list">
@@ -33,16 +35,6 @@ function App() {
             <ul className="list task__list task__list_completed">
             </ul>
           </article>
-        </template>
-        <template class="task-template">
-          <li className="task__item">
-            <button className="task__check" type="button"/>
-            <p className="task__name"> </p>
-            <div className="task__manager">
-              <button className="task__editor" type="button"/>
-              <button className="task__deleter" type="button"/>
-            </div>
-          </li>
         </template>
       </>
   );

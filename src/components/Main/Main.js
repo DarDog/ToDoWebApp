@@ -2,8 +2,9 @@ import React from 'react';
 import clock from "../../images/clock.svg";
 import calendar from "../../images/calendar.svg";
 import lineChart from "../../images/Line chart.svg";
+import TaskList from './TaskList'
 
-function Main() {
+function Main(props) {
   return (
       <main className="main root__main">
         <section className="section main__section left-bar">
@@ -36,20 +37,9 @@ function Main() {
               </li>
             </ul>
           </article>
-          <article className="container main__container todo-list">
-            <div className="container__title-container">
-              <h2 className="container__title container__title_font-size-s">Активные задачи</h2>
-              <button className="container__function-button"/>
-            </div>
-            <ul className="list task__list task__list_uncompleted">
-            </ul>
-            <div className="container__title-container">
-              <h2 className="container__title container__title_font-size-s">Завершенные задачи</h2>
-              <button className="container__function-button"/>
-            </div>
-            <ul className="list task__list task__list_completed">
-            </ul>
-          </article>
+          {props.categories.map(category => {
+            return <TaskList category={category.className} tasks={props.tasks} />
+          })}
         </section>
         <section className="section main__section">
           <article className="container main__container">
