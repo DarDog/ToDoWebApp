@@ -47,6 +47,10 @@ function App() {
     setIsAddTaskOpen(true)
   }
 
+  const handleTaskAdd = (newTask) => {
+    setTasks([newTask, ...tasks])
+  }
+
   return (
       <>
         <Nav categories={categories} />
@@ -61,6 +65,8 @@ function App() {
             isOpen={isAddTaskOpen}
             onClose={closeAllPopups}
             categories={categories}
+            onTaskAdd={handleTaskAdd}
+            tasksLength={tasks.length}
         />
       </>
   );
