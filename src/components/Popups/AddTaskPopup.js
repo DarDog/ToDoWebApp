@@ -3,7 +3,7 @@ import Popup from "./Popup";
 
 function AddTaskPopup(props) {
   return (
-      <Popup isOpen={props.isOpen}>
+      <Popup isOpen={props.isOpen} onClose={props.onClose}>
         <form className="form modal__form" name="task-creator">
           <label className="form__label" htmlFor="input-task-name">Что нужно сделать?</label>
           <input className="form__input" type="text" id="input-task-name" name="taskName" required maxLength="50"
@@ -26,7 +26,7 @@ function AddTaskPopup(props) {
             </label>
           </div>
           <div className="form__controller">
-            <button className="button form__button_type_reset" type="reset">Отменить</button>
+            <button onClick={props.onClose} className="button form__button_type_reset" type="reset">Отменить</button>
             <div className="form__controller form__controller_arrange_closer">
               <button className="button form__button_type_save" type="button">Сохранить как шаблон</button>
               <button className="button form__button_type_submit" type="submit">Добавить</button>

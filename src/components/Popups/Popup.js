@@ -1,8 +1,14 @@
 import React from 'react';
 
 function Popup(props) {
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains('modal')) {
+      props.onClose();
+    }
+  }
+
   return (
-      <article className={`modal ${props.isOpen && 'modal_active'}`}>
+      <article onClick={handleOverlayClick} className={`modal ${props.isOpen && 'modal_active'}`}>
         <div className="container modal__container">
           <div className="modal__title-container">
             <h2 className="container__title container__title_font-size-l">Добавить новую задачу</h2>
