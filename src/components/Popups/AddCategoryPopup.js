@@ -1,6 +1,7 @@
 import React from 'react';
 import Popup from "./Popup";
 import FormErrors from "./FormErrors";
+import home from "../../images/home.svg";
 
 function AddCategoryPopup(props) {
   const [name, setName] = React.useState('');
@@ -24,12 +25,35 @@ function AddCategoryPopup(props) {
   }
 
   React.useEffect(() => {
+    props.categories.forEach(category => {
+      if (category.title.toLowerCase() === name.toLowerCase()) {
+        setIsNameValid(false);
+        setNameErrorMassage('Такая категория уже существует');
+      }
+    })
+  }, [name])
+
+  React.useEffect(() => {
     if (!isNameValid) {
       setIsFormValid(false)
     } else {
       setIsFormValid(true)
     }
   }, [isNameValid, props.isOpen])
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    props.onCategoryAdd({
+      title: name,
+      categoryCode: name,
+      image: home,
+      _id: props.categoryLength
+    })
+
+    props.onClose();
+    setName('')
+  }
 
   return (
       <Popup
@@ -39,6 +63,7 @@ function AddCategoryPopup(props) {
           formName={'category-creator'}
           isAddTask={false}
           isValid={isFormValid}
+          onSubmit={handleSubmit}
       >
         <label className="form__label" htmlFor="input-task-name">Что нужно сделать?</label>
         <input className={`form__input ${isNameValid ? 'form__input_valid' : '' }`}
