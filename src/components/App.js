@@ -3,11 +3,12 @@ import { prependCategory, prependTasks } from "../utils/constans";
 import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
-import AddToDoPopup from "./AddToDoPopup";
+import AddTaskPopup from "./Popups/AddTaskPopup";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
   const [tasks, setTasks] = React.useState([]);
+  const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
 
   React.useEffect(() => {
     setCategories(prependCategory);
@@ -26,17 +27,48 @@ function App() {
     setTasks(tasks => tasks.filter((task) => task._id === taskId ? task.remove : task))
   }
 
+  const closeAllPopups = () => {
+    setIsAddTaskOpen(false)
+  }
+
+  React.useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeAllPopups();
+      }
+    }
+
+    document.addEventListener('keydown', closeByEscape)
+
+    return () => document.removeEventListener('keydown', closeByEscape)
+  })
+
+  const openAddTaskOpen = () => {
+    setIsAddTaskOpen(true)
+  }
+
+  const handleTaskAdd = (newTask) => {
+    console.log(newTask)
+    setTasks([newTask, ...tasks])
+  }
+
   return (
       <>
         <Nav categories={categories} />
-        <Header />
+        <Header onOpenAddTaskPopup={openAddTaskOpen} />
         <Main
             tasks={tasks}
             categories={categories}
             onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
             onTaskDelete={handleTaskDelete}
         />
-        <AddToDoPopup />
+        <AddTaskPopup
+            isOpen={isAddTaskOpen}
+            onClose={closeAllPopups}
+            categories={categories}
+            onTaskAdd={handleTaskAdd}
+            tasksLength={tasks.length}
+        />
       </>
   );
 }

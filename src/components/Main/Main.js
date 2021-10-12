@@ -40,7 +40,7 @@ function Main(props) {
             {props.categories.map(category => {
               return <TaskList
                   key={category._id}
-                  category={category.className}
+                  category={category.categoryCode}
                   tasks={props.tasks}
                   onToggleCompleteStatus={props.onToggleTaskCompleteStatus}
                   onTaskDelete={props.onTaskDelete}

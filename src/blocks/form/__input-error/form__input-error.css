@@ -1,0 +1,5 @@
+.form__input-error {
+  color: #f05454;
+  padding: 10px 25px;
+  display: none;
+}
