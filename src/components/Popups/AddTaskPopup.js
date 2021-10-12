@@ -75,7 +75,7 @@ function AddTaskPopup(props) {
     } else {
       setIsFormValid(true)
     }
-  })
+  }, [isNameValid, isCategoryValid, isDateValid, isPriorityValid, props.isOpen])
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -15,7 +15,7 @@ function Categories(props) {
             />
           })}
         </ul>
-        <button className="container__add-button create-category">Добавить</button>
+        <button onClick={props.onOpenAddCategoryPopup} className="container__add-button">Добавить</button>
       </article>
   );
 }
