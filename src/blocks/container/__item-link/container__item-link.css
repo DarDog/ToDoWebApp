@@ -1,0 +1,6 @@
+.container__item-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}

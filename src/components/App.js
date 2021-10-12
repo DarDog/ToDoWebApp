@@ -1,13 +1,20 @@
 import React from "react";
 import Header from "./Header";
-import Nav from "./Nav";
+import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import AddToDoPopup from "./AddToDoPopup";
+import {prependCategory} from "../utils/constans";
 
 function App() {
+  const [categories, setCategories] = React.useState([]);
+
+  React.useEffect(() => {
+    setCategories(prependCategory)
+  }, []);
+
   return (
       <>
-        <Nav />
+        <Nav categories={categories} />
         <Header />
         <Main />
         <AddToDoPopup />

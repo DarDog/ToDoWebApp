@@ -33,6 +33,7 @@
 @import url('./blocks/container/__title/_font-size_s/container__title_font-size_s.css');
 @import url('./blocks/container/__list/container__list.css');
 @import url('./blocks/container/__item/container__item.css');
+@import url('./blocks/container/__item-link/container__item-link.css');
 @import url('./blocks/container/__item/_flex_column/container__item_flex_column.css');
 @import url('./blocks/container/__item/_active/container__item_active.css');
 @import url('./blocks/container/__item-image/container__item-image.css');
