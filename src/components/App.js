@@ -3,7 +3,7 @@ import { prependCategory, prependTasks } from "../utils/constans";
 import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
-import AddToDoPopup from "./AddToDoPopup";
+import Popup from "./Popups/Popup";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -36,7 +36,7 @@ function App() {
             onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
             onTaskDelete={handleTaskDelete}
         />
-        <AddToDoPopup />
+        <Popup />
       </>
   );
 }
