@@ -26,7 +26,11 @@ function App() {
   }
 
   const handleTaskDelete = (taskId) => {
-    setTasks(tasks => tasks.filter((task) => task._id === taskId ? task.remove : task))
+    setTasks([
+        ...tasks.map(task =>
+          task._id === taskId ? {...task, isDeleted: !task.isDeleted} : {...task}
+        )
+    ])
   }
 
   const closeAllPopups = () => {

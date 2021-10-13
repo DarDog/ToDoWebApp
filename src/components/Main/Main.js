@@ -3,40 +3,13 @@ import clock from "../../images/clock.svg";
 import calendar from "../../images/calendar.svg";
 import lineChart from "../../images/Line chart.svg";
 import TaskList from './TaskList';
+import SuccessInWeek from "./SuccessInWeek";
 
 function Main(props) {
   return (
       <main className="main root__main">
         <section className="section main__section left-bar">
-          <article className="container main__container">
-            <div className="container__title-container">
-              <h2 className="container__title container__title_font-size-s">Успехи за неделю</h2>
-              <button className="container__function-button" type="button"/>
-            </div>
-            <ul className="list container__list list_flex_row">
-              <li className="container__item container__item_flex_column">
-                <p className="container__item-name container__item-name_font-size_m">Создано</p>
-                <div className="bubble">
-                  <h3 className="bubble__title">113</h3>
-                  <p className="bubble__name">Задач</p>
-                </div>
-              </li>
-              <li className="container__item container__item_flex_column">
-                <p className="container__item-name container__item-name_font-size_m">Завершено</p>
-                <div className="bubble">
-                  <h3 className="bubble__title">97</h3>
-                  <p className="bubble__name">Задач</p>
-                </div>
-              </li>
-              <li className="container__item container__item_flex_column">
-                <p className="container__item-name container__item-name_font-size_m">Удалено</p>
-                <div className="bubble">
-                  <h3 className="bubble__title">14</h3>
-                  <p className="bubble__name">Задач</p>
-                </div>
-              </li>
-            </ul>
-          </article>
+          <SuccessInWeek tasks={props.tasks} />
             {props.categories.map(category => {
               return <TaskList
                   key={category._id}

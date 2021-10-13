@@ -37,6 +37,7 @@ export const prependTasks = [
     isComplete: false,
     date: 0,
     priority: 'p1',
+    isDeleted: false,
     _id: 0
   },
   {
@@ -45,6 +46,7 @@ export const prependTasks = [
     isComplete: true,
     date: 0,
     priority: 'p1',
+    isDeleted: false,
     _id: 1
   },
   {
@@ -53,6 +55,7 @@ export const prependTasks = [
     isComplete: false,
     date: 0,
     priority: 'p1',
+    isDeleted: false,
     _id: 2
   },
   {
@@ -61,6 +64,7 @@ export const prependTasks = [
     isComplete: false,
     date: 0,
     priority: 'p1',
+    isDeleted: false,
     _id: 3
   },
   {
@@ -69,6 +73,7 @@ export const prependTasks = [
     isComplete: false,
     date: 0,
     priority: 'p1',
+    isDeleted: false,
     _id: 4
   },
   {
@@ -77,6 +82,16 @@ export const prependTasks = [
     isComplete: false,
     date: 0,
     priority: 'p1',
+    isDeleted: false,
     _id: 5
+  },
+  {
+    title: 'test6',
+    category: 'Семья',
+    isComplete: false,
+    date: 0,
+    priority: 'p1',
+    isDeleted: true,
+    _id: 6
   },
 ]

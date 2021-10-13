@@ -86,6 +86,7 @@ function AddTaskPopup(props) {
       isComplete: false,
       date: taskDate,
       priority: taskPriority,
+      isDeleted: false,
       _id: props.tasksLength
     })
 
@@ -94,6 +95,10 @@ function AddTaskPopup(props) {
     setTaskCategory('')
     setTaskPriority('')
     setTaskDate('')
+    setIsNameValid(false)
+    setIsDateValid(false)
+    setIsCategoryValid(false)
+    setIsPriorityValid(false)
   }
 
   return (

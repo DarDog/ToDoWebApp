@@ -12,7 +12,7 @@ function TaskList(props) {
           </div>
           <ul className="list task__list task__list_uncompleted">
             {props.tasks.map(task => {
-              if (task.category === props.category && task.isComplete === false) {
+              if (task.category === props.category && task.isComplete === false && task.isDeleted === false) {
                 return <Task key={task._id}
                              task={task}
                              onToggleCompleteStatus={props.onToggleCompleteStatus}
@@ -27,7 +27,7 @@ function TaskList(props) {
           </div>
           <ul className="list task__list task__list_completed">
             {props.tasks.map(task => {
-              if (task.category === props.category && task.isComplete === true) {
+              if (task.category === props.category && task.isComplete === true && task.isDeleted === false) {
                 return <Task
                     key={task._id}
                     task={task}
