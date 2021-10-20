@@ -31,7 +31,7 @@ function AddCategoryPopup(props) {
         setNameErrorMassage('Такая категория уже существует');
       }
     })
-  }, [name])
+  }, [name, props.categories])
 
   React.useEffect(() => {
     if (!isNameValid) {
