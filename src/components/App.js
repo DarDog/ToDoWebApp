@@ -10,7 +10,7 @@ import { qutesApi } from "../utils/quotesApi";
 function App() {
   const [categories, setCategories] = React.useState([]);
   const [tasks, setTasks] = React.useState([]);
-  const [quote, setQuote] = React.useState([])
+  const [quote, setQuote] = React.useState({})
   const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
   const [isAddCategoryOpen, setIsCategoryTaskOpen] = React.useState(false);
 
@@ -18,8 +18,8 @@ function App() {
     setCategories(prependCategory);
     setTasks(prependTasks);
     qutesApi.getQuoteOfDay()
-        .then(quote => {
-          setQuote(quote)
+        .then(data => {
+          setQuote(data.quote)
         })
         .catch(err => {
           console.error(err)
