@@ -4,6 +4,7 @@ import calendar from "../../images/calendar.svg";
 import lineChart from "../../images/Line chart.svg";
 import TaskList from './TaskList';
 import SuccessInWeek from "./SuccessInWeek";
+import QuotesContainer from "./QuotesContainer";
 
 function Main(props) {
   return (
@@ -59,15 +60,9 @@ function Main(props) {
               </p>
             </div>
           </article>
-          <article className="container main__container">
-            <h2 className="container__title container__title_font-size-s">Факт дня</h2>
-            <div className="fact">
-              <p className="container__paragraph">Человек, который просыпается в 6 утра, по статистике, закрывает
-                все
-                задачи к
-                18:00 вечера. Попробуем также 🤔?</p>
-            </div>
-          </article>
+          <QuotesContainer
+            quote={props.quote}
+          />
           <article className="container main__container">
             <h2 className="container__title container__title_font-size-s">График успеваемости</h2>
             <img src={lineChart} alt="Заглушка график" className="schedule"/>
