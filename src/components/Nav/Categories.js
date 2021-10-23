@@ -12,10 +12,11 @@ function Categories(props) {
                 title={category.title}
                 categoryCode={category.categoryCode}
                 image={category.image}
+                isDarkTheme={props.isDarkTheme}
             />
           })}
         </ul>
-        <button onClick={props.onOpenAddCategoryPopup} className="container__add-button">Добавить</button>
+        <button onClick={props.onOpenAddCategoryPopup} className={`container__add-button ${props.isDarkTheme && 'container__add-button_theme_dark'}`}>Добавить</button>
       </article>
   );
 }

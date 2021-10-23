@@ -13,6 +13,7 @@ function App() {
   const [quote, setQuote] = React.useState({})
   const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
   const [isAddCategoryOpen, setIsCategoryTaskOpen] = React.useState(false);
+  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
 
   React.useEffect(() => {
     setCategories(prependCategory);
@@ -75,19 +76,30 @@ function App() {
     setCategories([...categories, newCategory])
   }
 
+  const handleThemeToggle = () => {
+    setIsDarkTheme(!isDarkTheme);
+    document.body.classList.toggle('body_theme_dark')
+  }
+
   return (
-      <>
+      <div className={`root ${isDarkTheme && 'root_theme_dark'}`}>
         <Nav
             categories={categories}
             onOpenAddCategoryPopup={openAddCategoryPopup}
+            isDarkTheme={isDarkTheme}
         />
-        <Header onOpenAddTaskPopup={openAddTaskPopup} />
+        <Header
+            onOpenAddTaskPopup={openAddTaskPopup}
+            onThemeToggle={handleThemeToggle}
+            isDarkTheme={isDarkTheme}
+        />
         <Main
             tasks={tasks}
             categories={categories}
             onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
             onTaskDelete={handleTaskDelete}
             quote={quote}
+            isDarkTheme={isDarkTheme}
         />
         <AddTaskPopup
             isOpen={isAddTaskOpen}
@@ -103,7 +115,7 @@ function App() {
             categoryLength={categories.length}
             categories={categories}
         />
-      </>
+      </div>
   );
 }
 

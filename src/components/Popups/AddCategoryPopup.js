@@ -65,7 +65,7 @@ function AddCategoryPopup(props) {
           isValid={isFormValid}
           onSubmit={handleSubmit}
       >
-        <label className="form__label" htmlFor="input-task-name">Что нужно сделать?</label>
+        <label className="form__label" htmlFor="input-task-name">Назовите новую категорию</label>
         <input className={`form__input ${isNameValid ? 'form__input_valid' : '' }`}
                type="text"
                id="input-task-name"
