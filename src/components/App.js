@@ -1,11 +1,13 @@
 import React from "react";
+import {Route, Switch} from 'react-router-dom'
 import { prependCategory, prependTasks } from "../utils/constans";
+import { qutesApi } from "../utils/quotesApi";
 import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import AddTaskPopup from "./Popups/AddTaskPopup";
 import AddCategoryPopup from "./Popups/AddCategoryPopup";
-import { qutesApi } from "../utils/quotesApi";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -14,6 +16,7 @@ function App() {
   const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
   const [isAddCategoryOpen, setIsCategoryTaskOpen] = React.useState(false);
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
 
   React.useEffect(() => {
     setCategories(prependCategory);
@@ -94,23 +97,26 @@ function App() {
 
   return (
       <div className={`root ${isDarkTheme && 'root_theme_dark'}`}>
-        <Nav
-            categories={categories}
-            onOpenAddCategoryPopup={openAddCategoryPopup}
-            isDarkTheme={isDarkTheme}
-        />
         <Header
             onOpenAddTaskPopup={openAddTaskPopup}
             onThemeToggle={handleThemeToggle}
             isDarkTheme={isDarkTheme}
         />
-        <Main
-            tasks={tasks}
+        <Nav
             categories={categories}
-            onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
-            onTaskDelete={handleTaskDelete}
-            quote={quote}
+            onOpenAddCategoryPopup={openAddCategoryPopup}
             isDarkTheme={isDarkTheme}
+        />
+        <ProtectedRoute
+          component={Main}
+          exact path='/'
+          isLoggedIn={isLoggedIn}
+          tasks={tasks}
+          categories={categories}
+          onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
+          onTaskDelete={handleTaskDelete}
+          quote={quote}
+          isDarkTheme={isDarkTheme}
         />
         <AddTaskPopup
             isOpen={isAddTaskOpen}
