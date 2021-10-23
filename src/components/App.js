@@ -8,6 +8,7 @@ import Main from "./Main/Main";
 import AddTaskPopup from "./Popups/AddTaskPopup";
 import AddCategoryPopup from "./Popups/AddCategoryPopup";
 import ProtectedRoute from "./ProtectedRoute";
+import SignIn from "./Sign/SignIn";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -16,7 +17,7 @@ function App() {
   const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
   const [isAddCategoryOpen, setIsCategoryTaskOpen] = React.useState(false);
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
-  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   React.useEffect(() => {
     setCategories(prependCategory);
@@ -95,18 +96,28 @@ function App() {
     }
   }, [])
 
+  React.useEffect(() => {
+    if (isLoggedIn === false) {
+      setIsDarkTheme(false)
+      document.body.classList.remove('body_theme_dark');
+    }
+  }, [])
+
   return (
       <div className={`root ${isDarkTheme && 'root_theme_dark'}`}>
         <Header
             onOpenAddTaskPopup={openAddTaskPopup}
             onThemeToggle={handleThemeToggle}
             isDarkTheme={isDarkTheme}
+            isLoggedIn={isLoggedIn}
         />
         <Nav
             categories={categories}
             onOpenAddCategoryPopup={openAddCategoryPopup}
             isDarkTheme={isDarkTheme}
+            isLoggedIn={isLoggedIn}
         />
+        <Switch>
         <ProtectedRoute
           component={Main}
           exact path='/'
@@ -118,6 +129,10 @@ function App() {
           quote={quote}
           isDarkTheme={isDarkTheme}
         />
+        <Route path='/sign-in'>
+          <SignIn />
+        </Route>
+        </Switch>
         <AddTaskPopup
             isOpen={isAddTaskOpen}
             onClose={closeAllPopups}

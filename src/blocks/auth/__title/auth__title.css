@@ -1,0 +1,9 @@
+.auth__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: .02em;
+  color: #29a19c;
+  text-align: center;
+  margin: 0 0 20px;
+}

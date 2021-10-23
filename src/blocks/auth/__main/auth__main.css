@@ -1,0 +1,12 @@
+.auth__main {
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(29, 52, 54, .08);
+  border-radius: 10px;
+  min-width: 350px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0 auto;
+}

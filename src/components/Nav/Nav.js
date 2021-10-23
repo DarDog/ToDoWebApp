@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 
 function Nav(props) {
   return (
-      <nav className={`nav-bar root__nav-bar ${props.isDarkTheme && 'nav-bar_theme_dark'}`}>
+      <nav className={`nav-bar root__nav-bar ${props.isDarkTheme && 'nav-bar_theme_dark'} ${props.isLoggedIn || 'nav-bar_disable'}`}>
         <NavLink exact to={'/'} className={'logo nav-bar__logo'}>
           <img src={logo} alt="Логотип" className="logo__image"/>
           <h1 className="logo__name">Tasks Book</h1>

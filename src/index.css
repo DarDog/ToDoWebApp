@@ -23,6 +23,7 @@
 
 @import url('./blocks/nav-bar/nav-bar.css');
 @import url('./blocks/nav-bar/_theme_dark/nav-bar_theme_dark.css');
+@import url('./blocks/nav-bar/_disable/nav-bar_disable.css');
 @import url('./blocks/root/__nav-bar/root__nav-bar.css');
 
 @import url('./blocks/logo/logo.css');
@@ -123,3 +124,15 @@
 @import url('./blocks/form/__button/_type_save/form__buttone_type_save.css');
 @import url('./blocks/form/__button/_type_submit/form__button_type_submit.css');
 @import url('./blocks/form/__button/_disable/form__button_disable.css');
+
+@import url('./blocks/auth/auth.css');
+@import url('./blocks/auth/__main/auth__main.css');
+@import url('./blocks/auth/__title/auth__title.css');
+@import url('./blocks/auth/__form/auth__form.css');
+@import url('./blocks/auth/__paragraph/auth__paragraph.css');
+@import url('./blocks/auth/__link/auth__link.css');
+@import url('./blocks/auth/__footer/auth__footer.css');
+
+@import url('./blocks/footer/footer.css');
+@import url('./blocks/footer/footer__paragraph/footer__paragraph.css');
+@import url('blocks/footer/footer__paragraph/_type_underline/footer__paragraph_type_underline.css');
