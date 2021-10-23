@@ -78,8 +78,19 @@ function App() {
 
   const handleThemeToggle = () => {
     setIsDarkTheme(!isDarkTheme);
-    document.body.classList.toggle('body_theme_dark')
+    document.body.classList.toggle('body_theme_dark');
+    localStorage.setItem('theme', !isDarkTheme)
   }
+
+  React.useEffect(() => {
+    if (localStorage.getItem('theme') === 'true') {
+      setIsDarkTheme(true);
+      document.body.classList.add('body_theme_dark');
+    } else {
+      setIsDarkTheme(false)
+      document.body.classList.remove('body_theme_dark');
+    }
+  }, [])
 
   return (
       <div className={`root ${isDarkTheme && 'root_theme_dark'}`}>
