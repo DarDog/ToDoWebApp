@@ -69,7 +69,7 @@ function SignPage(props) {
               value={email}
               onChange={handleEmailChange}
           />
-          <FormErrors isValid={isEmailValid} errorsMassage={emailErrorMassage} />
+          {emailErrorMassage.length > 0 && <FormErrors isValid={isEmailValid} errorsMassage={emailErrorMassage} />}
           <input
               type="password"
               className={'form__input'}
@@ -80,7 +80,7 @@ function SignPage(props) {
               value={password}
               onChange={handlePasswordChange}
           />
-          <FormErrors isValid={isPasswordValid} errorsMassage={passwordErrorMassage} />
+          {passwordErrorMassage.length > 0 && <FormErrors isValid={isPasswordValid} errorsMassage={passwordErrorMassage} />}
           <button
               type={'submit'}
               className={`button form__button ${isFormValid && 'form__button_type_submit'}`}

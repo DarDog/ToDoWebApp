@@ -9,6 +9,7 @@ import AddTaskPopup from "./Popups/AddTaskPopup";
 import AddCategoryPopup from "./Popups/AddCategoryPopup";
 import ProtectedRoute from "./ProtectedRoute";
 import SignIn from "./Sign/SignIn";
+import SignUp from "./Sign/SignUp";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -97,14 +98,16 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    if (isLoggedIn === false) {
-      setIsDarkTheme(false)
-      document.body.classList.remove('body_theme_dark');
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false)
     }
   }, [])
 
   const handleLoggedIn = () => {
     setIsLoggedIn(true)
+    localStorage.setItem('isLoggedIn', 'true')
   }
 
   return (
@@ -138,6 +141,11 @@ function App() {
               onSubmit={handleLoggedIn}
           />
         </Route>
+          <Route path='/sign-up'>
+            <SignUp
+                onSubmit={handleLoggedIn}
+            />
+          </Route>
         </Switch>
         <AddTaskPopup
             isOpen={isAddTaskOpen}
