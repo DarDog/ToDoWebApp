@@ -59,7 +59,7 @@ function SignPage(props) {
   return (
       <>
         <h1 className="auth__title">{props.title}</h1>
-        <form noValidate className="auth__form form" name={props.formName}>
+        <form noValidate className="auth__form form" name={props.formName} onSubmit={handleSubmit}>
           <input
               type="email"
               className={'form__input'}
@@ -84,7 +84,6 @@ function SignPage(props) {
           <button
               type={'submit'}
               className={`button form__button ${isFormValid && 'form__button_type_submit'}`}
-              onSubmit={handleSubmit}
           >{props.buttonText}</button>
         </form>
       </>

@@ -107,11 +107,11 @@ function App() {
       setIsLoggedIn(false)
       history.push('/sign-in')
     }
-  }, [])
+  }, [history, isLoggedIn])
 
   const handleLoggedIn = () => {
-    setIsLoggedIn(true)
     localStorage.setItem('isLoggedIn', 'true')
+    setIsLoggedIn(true)
   }
 
   return (
@@ -129,17 +129,6 @@ function App() {
             isLoggedIn={isLoggedIn}
         />
         <Switch>
-        <ProtectedRoute
-          component={Main}
-          exact path='/'
-          isLoggedIn={isLoggedIn}
-          tasks={tasks}
-          categories={categories}
-          onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
-          onTaskDelete={handleTaskDelete}
-          quote={quote}
-          isDarkTheme={isDarkTheme}
-        />
         <Route path='/sign-in'>
           <SignIn
               onSubmit={handleLoggedIn}
@@ -150,6 +139,17 @@ function App() {
                 onSubmit={handleLoggedIn}
             />
           </Route>
+          <ProtectedRoute
+              component={Main}
+              path='/'
+              isLoggedIn={isLoggedIn}
+              tasks={tasks}
+              categories={categories}
+              onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
+              onTaskDelete={handleTaskDelete}
+              quote={quote}
+              isDarkTheme={isDarkTheme}
+          />
         </Switch>
         <AddTaskPopup
             isOpen={isAddTaskOpen}

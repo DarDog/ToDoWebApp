@@ -136,3 +136,11 @@
 @import url('./blocks/footer/footer.css');
 @import url('./blocks/footer/footer__paragraph/footer__paragraph.css');
 @import url('blocks/footer/footer__paragraph/_type_underline/footer__paragraph_type_underline.css');
+
+@import url('blocks/user-profile/user-profile.css');
+@import url('blocks/user-profile/__menu/user-profile__menu.css');
+@import url('blocks/user-profile/__avatar/user-profile__avatar.css');
+@import url('blocks/user-profile/__link/user-profile__link.css');
+@import url('blocks/user-profile/__form/user-profile__form.css');
+@import url('blocks/user-profile/__form-container/user-profile__form-container.css');
+@import url('blocks/user-profile/__form-container/_direction_row/user-profile__form-container_direction_row.css');
