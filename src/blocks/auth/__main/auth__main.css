@@ -3,6 +3,7 @@
   box-shadow: 0 10px 25px rgba(29, 52, 54, .08);
   border-radius: 10px;
   min-width: 350px;
+  max-width: 350px;
   padding: 20px;
   display: flex;
   flex-direction: column;

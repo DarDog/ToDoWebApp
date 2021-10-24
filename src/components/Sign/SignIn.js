@@ -10,6 +10,7 @@ function SignIn(props) {
             title={'Вход в аккаунт'}
             formName={'sign-in'}
             buttonText={'Войти'}
+            onSubmit={props.onSubmit}
           />
           <p className="auth__paragraph">Еще нет аккаунта? <Link to={'/sign-up'} className={'auth__link'}>Регистрация</Link></p>
         </article>

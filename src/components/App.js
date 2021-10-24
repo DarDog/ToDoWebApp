@@ -103,6 +103,10 @@ function App() {
     }
   }, [])
 
+  const handleLoggedIn = () => {
+    setIsLoggedIn(true)
+  }
+
   return (
       <div className={`root ${isDarkTheme && 'root_theme_dark'}`}>
         <Header
@@ -130,7 +134,9 @@ function App() {
           isDarkTheme={isDarkTheme}
         />
         <Route path='/sign-in'>
-          <SignIn />
+          <SignIn
+              onSubmit={handleLoggedIn}
+          />
         </Route>
         </Switch>
         <AddTaskPopup
