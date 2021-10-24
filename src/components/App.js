@@ -1,11 +1,15 @@
 import React from "react";
+import {Route, Switch, useHistory} from 'react-router-dom'
 import { prependCategory, prependTasks } from "../utils/constans";
+import { qutesApi } from "../utils/quotesApi";
 import Header from "./Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import AddTaskPopup from "./Popups/AddTaskPopup";
 import AddCategoryPopup from "./Popups/AddCategoryPopup";
-import { qutesApi } from "../utils/quotesApi";
+import ProtectedRoute from "./ProtectedRoute";
+import SignIn from "./Sign/SignIn";
+import SignUp from "./Sign/SignUp";
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -14,6 +18,9 @@ function App() {
   const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false);
   const [isAddCategoryOpen, setIsCategoryTaskOpen] = React.useState(false);
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  const history = useHistory()
 
   React.useEffect(() => {
     setCategories(prependCategory);
@@ -92,26 +99,58 @@ function App() {
     }
   }, [])
 
+  React.useEffect(() => {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      setIsLoggedIn(true);
+      history.push('/')
+    } else {
+      setIsLoggedIn(false)
+      history.push('/sign-in')
+    }
+  }, [history, isLoggedIn])
+
+  const handleLoggedIn = () => {
+    localStorage.setItem('isLoggedIn', 'true')
+    setIsLoggedIn(true)
+  }
+
   return (
       <div className={`root ${isDarkTheme && 'root_theme_dark'}`}>
-        <Nav
-            categories={categories}
-            onOpenAddCategoryPopup={openAddCategoryPopup}
-            isDarkTheme={isDarkTheme}
-        />
         <Header
             onOpenAddTaskPopup={openAddTaskPopup}
             onThemeToggle={handleThemeToggle}
             isDarkTheme={isDarkTheme}
+            isLoggedIn={isLoggedIn}
         />
-        <Main
-            tasks={tasks}
+        <Nav
             categories={categories}
-            onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
-            onTaskDelete={handleTaskDelete}
-            quote={quote}
+            onOpenAddCategoryPopup={openAddCategoryPopup}
             isDarkTheme={isDarkTheme}
+            isLoggedIn={isLoggedIn}
         />
+        <Switch>
+        <Route path='/sign-in'>
+          <SignIn
+              onSubmit={handleLoggedIn}
+          />
+        </Route>
+          <Route path='/sign-up'>
+            <SignUp
+                onSubmit={handleLoggedIn}
+            />
+          </Route>
+          <ProtectedRoute
+              component={Main}
+              path='/'
+              isLoggedIn={isLoggedIn}
+              tasks={tasks}
+              categories={categories}
+              onToggleTaskCompleteStatus={handleToggleTaskCompleteStatus}
+              onTaskDelete={handleTaskDelete}
+              quote={quote}
+              isDarkTheme={isDarkTheme}
+          />
+        </Switch>
         <AddTaskPopup
             isOpen={isAddTaskOpen}
             onClose={closeAllPopups}
