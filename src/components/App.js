@@ -20,6 +20,8 @@ function App() {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
+  const history = useHistory()
+
   React.useEffect(() => {
     setCategories(prependCategory);
     setTasks(prependTasks);
@@ -100,15 +102,16 @@ function App() {
   React.useEffect(() => {
     if (localStorage.getItem('isLoggedIn') === 'true') {
       setIsLoggedIn(true);
+      history.push('/')
     } else {
       setIsLoggedIn(false)
+      history.push('/sign-in')
     }
   }, [])
 
   const handleLoggedIn = () => {
     setIsLoggedIn(true)
     localStorage.setItem('isLoggedIn', 'true')
-    history.push('/')
   }
 
   return (
