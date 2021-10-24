@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, useHistory} from 'react-router-dom'
 import { prependCategory, prependTasks } from "../utils/constans";
 import { qutesApi } from "../utils/quotesApi";
 import Header from "./Header";
@@ -108,6 +108,7 @@ function App() {
   const handleLoggedIn = () => {
     setIsLoggedIn(true)
     localStorage.setItem('isLoggedIn', 'true')
+    history.push('/')
   }
 
   return (
