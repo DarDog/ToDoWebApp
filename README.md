@@ -1,4 +1,4 @@
-Project Task Manager
+# Project Task Manager
 
 ### Technology stack:
 * JS 
