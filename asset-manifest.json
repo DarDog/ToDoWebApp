@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/ToDoWebApp/static/css/main.c626686c.chunk.css",
+    "main.js": "/ToDoWebApp/static/js/main.bd835b92.chunk.js",
+    "main.js.map": "/ToDoWebApp/static/js/main.bd835b92.chunk.js.map",
+    "runtime-main.js": "/ToDoWebApp/static/js/runtime-main.93fe73ac.js",
+    "runtime-main.js.map": "/ToDoWebApp/static/js/runtime-main.93fe73ac.js.map",
+    "static/js/2.9170bab2.chunk.js": "/ToDoWebApp/static/js/2.9170bab2.chunk.js",
+    "static/js/2.9170bab2.chunk.js.map": "/ToDoWebApp/static/js/2.9170bab2.chunk.js.map",
+    "static/js/3.1801a9ab.chunk.js": "/ToDoWebApp/static/js/3.1801a9ab.chunk.js",
+    "static/js/3.1801a9ab.chunk.js.map": "/ToDoWebApp/static/js/3.1801a9ab.chunk.js.map",
+    "index.html": "/ToDoWebApp/index.html",
+    "static/css/main.c626686c.chunk.css.map": "/ToDoWebApp/static/css/main.c626686c.chunk.css.map",
+    "static/js/2.9170bab2.chunk.js.LICENSE.txt": "/ToDoWebApp/static/js/2.9170bab2.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/ToDoWebApp/static/media/trash.6503d455.svg",
+    "static/media/Line chart.14186107.svg": "/ToDoWebApp/static/media/Line chart.14186107.svg",
+    "static/media/avatar.32ba381a.jpg": "/ToDoWebApp/static/media/avatar.32ba381a.jpg",
+    "static/media/bar-chart-2.d2260903.svg": "/ToDoWebApp/static/media/bar-chart-2.d2260903.svg",
+    "static/media/briefcase.a9517622.svg": "/ToDoWebApp/static/media/briefcase.a9517622.svg",
+    "static/media/calendar.7481ca4a.svg": "/ToDoWebApp/static/media/calendar.7481ca4a.svg",
+    "static/media/clock.a97d525b.svg": "/ToDoWebApp/static/media/clock.a97d525b.svg",
+    "static/media/home.2cbc7f51.svg": "/ToDoWebApp/static/media/home.2cbc7f51.svg",
+    "static/media/logo.ac7dc901.svg": "/ToDoWebApp/static/media/logo.ac7dc901.svg",
+    "static/media/trending-up.82e04518.svg": "/ToDoWebApp/static/media/trending-up.82e04518.svg",
+    "static/media/users.b516306e.svg": "/ToDoWebApp/static/media/users.b516306e.svg",
+    "static/media/zap.468c7cf4.svg": "/ToDoWebApp/static/media/zap.468c7cf4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.93fe73ac.js",
+    "static/js/2.9170bab2.chunk.js",
+    "static/css/main.c626686c.chunk.css",
+    "static/js/main.bd835b92.chunk.js"
+  ]
+}
