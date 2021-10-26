@@ -17,17 +17,17 @@ ___
 
 ### RoadMap
 
-*[x] Make Layout of app.
-*[x] Add React and break the application into components.
-*[x] Make tasks functional.
-*[x] Do Popup for adding tasks and categories.
-*[x] Do forms validation.
-*[x] Add SignIn and SignUp components.
-*[x] Add routing.
-*[x] Add additional functionality (Quotes, Current time).
-*[ ] Make Backend
-*[ ] Complete REST API.
-*[ ] Release the finished application.
+- [x] Make Layout of app.
+- [x] Add React and break the application into components.
+- [x] Make tasks functional.
+- [x] Do Popup for adding tasks and categories.
+- [x] Do forms validation.
+- [x] Add SignIn and SignUp components.
+- [x] Add routing.
+- [x] Add additional functionality (Quotes, Current time).
+- [ ] Make Backend
+- [ ] Complete REST API.
+- [ ] Release the finished application.
 
 ___
 
@@ -40,3 +40,4 @@ To run dev server
         npm run start
 
 Also you can go to [Gh-pages](https://DarDog.github.io/ToDoWebApp) 
+PS To enter, you can use any combination of mail-password, the main thing is that the form will be validated
