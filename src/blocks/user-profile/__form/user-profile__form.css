@@ -1,0 +1,6 @@
+.user-profile__form {
+  width: 100%;
+  gap: 30px;
+  min-width: 300px;
+  box-sizing: border-box;
+}

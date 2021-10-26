@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Project Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Technology stack:
+* JS 
+* React
+* CSS 
+* BEM
+* HTML 5
 
-## Available Scripts
+___
 
-In the project directory, you can run:
+Hello there! 
+It is my portfolio SPA project. In it I plan to implement React APP with hooks and REST API technologies. Also i'm used BEM methodology and layout from 'Figma'. 
+[Design](https://www.figma.com/file/Ck9WI2lSqEK77YUkWkKXJK/SPA-TasksBook-Todos-Community) taken from open access and belong to [CupTeam](https://cupteam.space/) designers.
 
-### `yarn start`
+___
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### RoadMap
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*[x] Make Layout of app.
+*[x] Add React and break the application into components.
+*[x] Make tasks functional.
+*[x] Do Popup for adding tasks and categories.
+*[x] Do forms validation.
+*[x] Add SignIn and SignUp components.
+*[x] Add routing.
+*[x] Add additional functionality (Quotes, Current time).
+*[ ] Make Backend
+*[ ] Complete REST API.
+*[ ] Release the finished application.
 
-### `yarn test`
+___
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run a project on your own, you need:
 
-### `yarn build`
+        git clone git@github.com:DarDog/ToDoWebApp.git
+        
+To run dev server 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        npm run start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Also you can go to [Gh-pages](https://DarDog.github.io/ToDoWebApp) 
