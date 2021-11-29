@@ -37,6 +37,7 @@ To run a project on your own, you need:
         
 To run dev server 
 
+        npm install
         npm run start
 
 Also you can go to [Gh-pages](https://DarDog.github.io/ToDoWebApp) 
